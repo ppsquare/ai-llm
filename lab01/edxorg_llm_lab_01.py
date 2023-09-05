@@ -26,5 +26,5 @@
 # 10. challenge_test_covid, num_rows: 401
 
 import datasets
-data = datasets.load_dataset('GEM/xsum')
-data
+data = datasets.load_dataset('GEM/xsum') # it will load all available data sets
+data # Print the dataset details
