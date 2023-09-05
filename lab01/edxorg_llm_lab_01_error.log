@@ -1,0 +1,23 @@
+NotImplementedError                       Traceback (most recent call last)
+
+/usr/local/lib/python3.10/dist-packages/datasets/builder.py in _prepare_split_single(self, gen_kwargs, fpath, file_format, max_shard_size, split_info, check_duplicate_keys, job_id)
+   1664         try:
+-> 1665             writer = writer_class(
+   1666                 features=self.info.features,
+
+9 frames
+
+NotImplementedError: 
+
+The above exception was the direct cause of the following exception:
+
+DatasetGenerationError                    Traceback (most recent call last)
+
+/usr/local/lib/python3.10/dist-packages/datasets/builder.py in _prepare_split_single(self, gen_kwargs, fpath, file_format, max_shard_size, split_info, check_duplicate_keys, job_id)
+   1710             if isinstance(e, SchemaInferenceError) and e.__context__ is not None:
+   1711                 e = e.__context__
+-> 1712             raise DatasetGenerationError("An error occurred while generating the dataset") from e
+   1713 
+   1714         yield job_id, True, (total_num_examples, total_num_bytes, writer._features, num_shards, shard_lengths)
+
+DatasetGenerationError: An error occurred while generating the dataset
