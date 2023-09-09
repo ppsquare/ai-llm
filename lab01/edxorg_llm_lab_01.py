@@ -25,6 +25,16 @@
 # 9. challenge_test_nopunc, num_rows: 500
 # 10. challenge_test_covid, num_rows: 401
 
+%pip install datasets #install the dataset for this session
 import datasets
 data = datasets.load_dataset('GEM/xsum') # it will load all available data sets
 data # Print the dataset details
+
+
+# Create folder and cache the dataset 
+from appdirs import user_cache_dir
+cachedir = user_cache_dir("xsumdemo")
+cachedir
+data.save_to_disk(cachedir) 
+# Load from the cache
+datasets.load_from_disk(cachedir) 
